@@ -1,0 +1,28 @@
+<h3>Post List</h3>
+
+<p *ngIf="errMsg!=null" style="color:red">
+  {{errMsg}}
+</p>
+
+<section *ngIf="errMsg==null">
+  <div *ngFor="let post of posts" class="col col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        {{post.id}}. {{post.title}}
+      </div>
+      <div class="panel-body">
+        <p>{{post.body}}</p>
+      </div>
+      <div class="panel-footer">
+        <div class="btn-toolbar">
+          <a class="btn btn-sm btn-primary" routerLink="/editPost/{{post.id}}">
+            <span class="glyphicon glyphicon-pencil"></span>Edit</a>
+          <a class="btn btn-sm btn-danger" (click)="deletePost(post)">
+            <span class="glyphicon glyphicon-trash"></span>Delete</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>

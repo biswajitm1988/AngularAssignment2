@@ -1,0 +1,11 @@
+<div *ngIf="!post">
+  <p>
+    <strong>The requested POST is not found!</strong>
+  </p>
+</div>
+<div class="panel panel-primary" *ngIf="post">
+  <div class="panel-heading"> {{post.title}} </div>
+  <div class="panel-body">
+    <p>{{post.body}}</p>
+  </div>
+</div>
